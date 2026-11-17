@@ -16,7 +16,6 @@ import kotlin.uuid.Uuid
  * @property ratio Relative weight within the parent [Split]. Only the ratios of siblings matter
  * relative to each other; they are normalised at layout time so absolute values are arbitrary.
  */
-@Stable
 sealed class TilingNode {
     abstract val ratio: Float
 
