@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.github.sbusceti"
-version = "2.0.3"
+version = "2.0.4"
 
 kotlin {
     jvm()
