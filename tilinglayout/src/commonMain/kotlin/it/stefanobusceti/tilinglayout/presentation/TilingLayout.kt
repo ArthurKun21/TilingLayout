@@ -37,7 +37,7 @@ private data class PlacedNode(
  *
  * [leafContent] is called once per [TilingNode.Leaf], receiving its [TilingNode.Leaf.id].
  * Leaves are visited depth-first, left-before-right and top-before-bottom.
- * A draggable Material3 divider of [gapThickness] and [gapColor] is inserted between each pair of
+ * A draggable Material3 divider styled by [gap] ([GapDefaults.thickness] and [GapDefaults.color]) is inserted between each pair of
  * adjacent panes; dragging it updates the split ratio at runtime without modifying the original [node] tree.
  * Passing `null` renders an empty layout, useful when all leaves have been removed.
  */
@@ -104,6 +104,7 @@ fun TilingLayout(
                                 ratios[node.id] = newRatios
                             },
                             gapThickness = gap.thickness,
+                            color = gap.color,
                             sizeProvider = { splitSizes[node.id] ?: 1 },
                             onDragEnd = {
                                 onRatiosChanged(ratios)
@@ -280,7 +281,7 @@ private fun measureGap(
 private fun Gap(
     nodeId: String,
     gapType: GapType,
-    color: Color = Color.Transparent,
+    color: Color,
     onRatioChanged: (Float) -> Unit,
     gapThickness: Dp,
     sizeProvider: () -> Int,
