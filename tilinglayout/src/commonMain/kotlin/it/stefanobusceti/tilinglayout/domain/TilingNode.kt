@@ -1,6 +1,5 @@
 package it.stefanobusceti.tilinglayout.domain
 
-import androidx.compose.runtime.Stable
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
